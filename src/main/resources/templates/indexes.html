@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Vegetables</title>
+  <style>
+        .vegetable {
+            margin-bottom: 20px;
+        }
+        .vegetable img {
+            width: 100px; /* Adjust the size as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Vegetables List</h1>
+<div th:each="vegetable : ${categoryWiseVegetables}" class="vegetable">
+  <p><strong>Name:</strong> <span th:text="${vegetable.name}"></span></p>
+  <p><strong>Price:</strong> <span th:text="${vegetable.price}"></span></p>
+<!--  <p><strong>Image:</strong></p>-->
+<!--  <img th:src="@{${vegetable.image}}" alt="Image of ${vegetable.name}"/>-->
+</div>
+</body>
+</html>

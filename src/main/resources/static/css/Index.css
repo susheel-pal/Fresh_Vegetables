@@ -1,0 +1,88 @@
+body {
+            font-family: Arial, sans-serif;
+            margin:8px;
+        }
+
+        .carousel {
+            width: 1200px;
+            height:400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-images {
+            display: flex;
+            width:4000px;
+            height:400px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-btns {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-btns button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+.circle-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 24px;
+        }
+
+        .circle-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+.scrollable-list {
+            padding: 10px;
+            margin: 20px 0;
+            margin-left:44px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin-left:24px;
+        }
+
+        .item-details {
+            flex: 1;
+            margin-left: 44px;
+            margin-top:14px;
+            margin-right:100px;
+        }

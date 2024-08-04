@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="" th:href="@{css/signup.css}" />
+</head>
+<body>
+<div class="container">
+  <div class="form-container">
+    <h2>Register As User</h2>
+    <form action="" th:action="@{/registerUser}" method="post">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+      </div>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" required>
+      </div>
+      <div class="form-group">
+        <label for="phone_no">Phone No:</label>
+        <input type="tel" id="phone_no" name="phone_no" placeholder="Enter phone no." required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" placeholder="Enter address" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+      <p style="text-align: center;">Already have an account <a href="" th:href="@{/uLogin}" style="color:green;">Login Here</a></p>
+    </form>
+  </div>
+</div>
+</body>
+</html>

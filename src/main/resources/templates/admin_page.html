@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="" th:href="@{css/admin_page.css}">
+
+</head>
+<body>
+
+<h3 style="text-align:center; margin-bottom:24px; padding:24px; background-color: #a5ed7b">Admin Page</h3>
+<div class="container">
+    <h3 style="text-align:center;">Add Vegetables</h3>
+    <form action="" th:action="@{/addVegetables}" method="POST">
+        <label for="name">Vegetables Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter name" required>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" placeholder="Enter price" required>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="vegetables">Vegetables</option>
+            <option value="herbs">Herbs</option>
+            <option value="leafy_vegetables">Leafy Vegetables</option>
+            <option value="exotic_vegetables">Exotic Vegetables</option>
+            <option value="onion_and_potato">Onion and Potato</option>
+            <option value="fruit">Fruits</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" placeholder="Enter description" required></textarea>
+
+        <label for="availability">Availability:</label>
+        <select id="availability" name="availability" required>
+            <option value="true">In Stock</option>
+            <option value="false">Out of Stock</option>
+        </select>
+
+        <button type="submit">Add Vegetables</button>
+    </form>
+</div>
+
+<div style="margin-top:24px; margin-bottom:24px; text-align:center;">
+    <h3 style="align:center;"><b>Orders</b></h3>
+</div>
+
+<div style="margin-left:94px; margin-right:94px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #eee;" th:each="orders :${getAllOrders}">
+        <img src="/Images/herbs.jpg" alt="Item 1" style="width: 100px; height: 100px; border-radius: 8px; margin-left:24px;">
+        <div style="flex: 1; margin-left: 44px; margin-top:14px; margin-right:100px;">
+            <p><strong>Name:</strong> <span th:text="${orders.name}"></span></p>
+            <p><strong>Price:</strong> <span th:text="${orders.price}"></span></p>
+        </div>
+        <div class="item-details">
+            <p><strong>Weight:</strong> <span th:text="${orders.weight}"></span></p>
+            <p><strong>Total Price:</strong> <span th:text="${orders.amount}"></span></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
